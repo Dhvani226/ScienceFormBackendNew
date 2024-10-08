@@ -1,0 +1,23 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL") // This will come from your .env file
+}
+
+model formIPR {
+  id                Int      @id @default(autoincrement())
+  studentName       String
+  schoolName        String
+  schoolAddress     String
+  schoolCity        String
+  schoolState       String
+  schoolPincode     String
+  teacherName       String
+  teacherEmail      String
+  modelType         String
+  participationType String
+  createdAt         DateTime @default(now())
+}
